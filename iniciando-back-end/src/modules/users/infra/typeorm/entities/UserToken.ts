@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import {
   Entity,
   Column,
@@ -9,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity('user_tokens')
-class User {
+class UserToken {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -27,4 +26,4 @@ class User {
   updated_at: Date;
 }
 
-export default User;
+export default UserToken;
