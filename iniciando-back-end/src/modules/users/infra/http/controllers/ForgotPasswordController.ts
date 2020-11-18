@@ -13,7 +13,7 @@ export default class ForgotPasswordController {
     const sendForgotPasswordEmail = container.resolve(
       SendForgotPasswordEmailService,
     );
-
+    console.log(email);
     await sendForgotPasswordEmail.execute({
       email,
     });
