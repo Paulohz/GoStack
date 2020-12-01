@@ -22,7 +22,7 @@ class CreateUserService {
     @inject('HashProvider')
     private hashProvider: IHashProvider,
 
-    @inject('cacheProvider')
+    @inject('CacheProvider')
     private cacheProvider: ICacheProvider,
   ) {}
 
@@ -30,7 +30,7 @@ class CreateUserService {
     const checkUserExists = await this.usersRepository.findByEmail(email);
 
     if (checkUserExists) {
-      throw new AppError('Email address already used');
+      throw new AppError('Email address already used.');
     }
 
     const hashedPassword = await this.hashProvider.generateHash(password);
@@ -41,7 +41,7 @@ class CreateUserService {
       password: hashedPassword,
     });
 
-    await this.cacheProvider.invalidate('providers-list');
+    await this.cacheProvider.invalidatePrefix('providers-list');
 
     return user;
   }

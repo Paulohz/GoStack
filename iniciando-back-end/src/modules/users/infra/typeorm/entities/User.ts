@@ -5,7 +5,6 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-
 import uploadConfig from '@config/upload';
 
 import { Exclude, Expose } from 'class-transformer';
@@ -39,6 +38,7 @@ class User {
     if (!this.avatar) {
       return null;
     }
+
     switch (uploadConfig.driver) {
       case 'disk':
         return `${process.env.APP_API_URL}/files/${this.avatar}`;

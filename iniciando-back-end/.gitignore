@@ -5,6 +5,7 @@ build/
 .env
 temp/
 ormconfig.json
+dist
 
 tmp/*
 !tmp/.gitkeep
