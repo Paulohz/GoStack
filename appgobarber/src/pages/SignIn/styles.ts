@@ -7,8 +7,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
-
-  `;
+`;
 
 export const Title = styled.Text`
   font-size: 20px;
@@ -24,7 +23,6 @@ export const ForgotPasswordText = styled.Text`
   color: #f4ede8;
   font-size: 16px;
   font-family: 'RobotoSlab-Regular';
-
 `;
 
 export const CreateAccountButton = styled.TouchableOpacity`

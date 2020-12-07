@@ -1,6 +1,10 @@
 import React, { useCallback, useRef } from 'react';
 import {
-  Image, View, KeyboardAvoidingView, Platform, ScrollView,
+  Image,
+  View,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   TextInput,
   Alert,
 } from 'react-native';
@@ -72,16 +76,22 @@ const SignIn: React.FC = () => {
           return;
         }
 
-        Alert.alert('Erro na autenticação', 'Ocorreu um erro ao fazer login, cheque as credenciais.');
+        Alert.alert(
+          'Erro na autenticação',
+          'Ocorreu um erro ao fazer login, cheque as credenciais.',
+        );
       }
     },
     [signIn],
   );
 
   return (
-
     <>
-      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined} enabled>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
+      >
         <ScrollView
           contentContainerStyle={{ flex: 1 }}
           keyboardShouldPersistTaps="handled"
@@ -115,14 +125,21 @@ const SignIn: React.FC = () => {
                   formRef.current?.submitForm();
                 }}
               />
-              <Button onPress={() => { formRef.current?.submitForm(); }}>Entrar</Button>
-
+              <Button
+                onPress={() => {
+                  formRef.current?.submitForm();
+                }}
+              >
+                Entrar
+              </Button>
             </Form>
 
-            <ForgotPassword onPress={() => { console.log('eae'); }}>
-              <ForgotPasswordText>
-                Esqueci minha senha
-              </ForgotPasswordText>
+            <ForgotPassword
+              onPress={() => {
+                console.log('eae');
+              }}
+            >
+              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
           </Container>
         </ScrollView>
@@ -130,12 +147,9 @@ const SignIn: React.FC = () => {
 
       <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
         <Icon name="log-in" size={20} color="#ff9000" />
-        <CreateAccountButtonText>
-          Criar uma conta
-        </CreateAccountButtonText>
+        <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
       </CreateAccountButton>
     </>
-
   );
 };
 export default SignIn;
